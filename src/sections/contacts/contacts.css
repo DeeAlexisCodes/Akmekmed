@@ -1,0 +1,72 @@
+.contacts__container{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.contacts__card{
+  background: url(../../assets/IMG-20230305-WA0039.jpg);
+}
+
+.contacts__cards{
+    margin: 1.5rem 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.contacts__card-icon {
+    font-size: 1.3rem;
+    color: white;
+    border-radius: var(--border-radius-3);
+    width: fit-content;
+    margin-inline: auto;
+    padding: 0.6rem;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.contacts__cards p{
+    margin-top: 1.5rem;
+    color: #ff5653;
+}
+
+.contacts__left{
+    margin-top: 4rem;
+}
+
+.contacts__right p{
+    margin-bottom: -2rem;
+    color: #ff5653;
+}
+
+.contacts__right .btn{
+    margin-top: 2.5rem;
+}
+
+.contacts__right h3{
+    color: #0194e2;
+}
+
+.contacts__right h2{
+    margin-bottom: 1.5rem;
+    color: #0194e2;
+}
+
+.contacts__right h1{
+    color: #eab676;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+/* MEDIA QUERIES (phones) */
+@media screen and (max-width: 600px){
+    .contacts__cards{
+        margin: 3rem 0 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+        text-align: center;
+    }
+}

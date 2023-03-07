@@ -1,0 +1,139 @@
+nav {
+    width: 100vw;
+    height: 5rem;
+    display: grid;
+    place-items: center;
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    box-shadow: 0 1rem 1.5rem black;
+    transition: var(--transition);
+}
+
+.nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo{
+    width: 15rem;
+    height: 4.5rem;
+}
+
+nav img {
+    width: 30%;
+}
+
+nav a {
+    color: #ff5653;
+}
+
+.nav__menu {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav__toggle-btn{
+    display: none;
+}
+
+.active-nav{
+    position: sticky;
+}
+
+.active-nav::after {
+    content: '';
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: #ff5653;
+    position: absolute;
+    left: calc(50% - 0.6rem);
+    transform: rotate(45deg);
+    margin-top: 0.9rem;
+}
+
+/* media queries(medium and small screens) */
+@media screen and (max-width: 1024px) {
+    .nav__toggle-btn{
+      display: inline-block;
+      background: transparent;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+  
+    .nav__toggle-btn svg{
+      color: #ff5653;
+    }
+  
+    .nav__menu{
+      position: absolute;
+      top: 95%;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      perspective: 400px;
+    }
+  
+    .active-nav, .active-nav::after{
+      display: none;
+    }
+  
+    .nav__menu li{
+      height: 4rem;
+      width: 100%;
+      box-sizing: -2rem 2rem 5rem rgba(0, 0, 0, 0.4);
+      animation: navAnimation 600ms ease forwards;
+      transform: rotateX(90deg);
+      opacity: 0;
+      transform-origin: top;
+    }
+  
+    .nav__menu li:nth-child(2) {
+      animation-delay: 200ms;
+    }
+  
+    .nav__menu li:nth-child(3) {
+      animation-delay: 400ms;
+    }
+  
+    .nav__menu li:nth-child(4) {
+      animation-delay: 600ms;
+    }
+  
+    .nav__menu li:nth-child(5) {
+      animation-delay: 800ms;
+    }
+  
+    .nav__menu li:nth-child(6) {
+      animation-delay: 2000ms;
+    }
+  
+    @keyframes navAnimation {
+      to {
+          transform: rotateX(0);
+          opacity: 1;
+      } 
+    }
+  
+    .nav__menu li a{
+      background-color: black;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 1rem 5rem 1rem 3rem;
+      font-size: .7rem;
+    }
+  
+    .show__nav{
+      display: flex;
+    }
+  
+    .hide__nav{
+      display: none;
+    }
+  }

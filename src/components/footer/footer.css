@@ -1,0 +1,80 @@
+/* FOOTER */
+footer{
+    background: black;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    font-size: 0.8rem;
+    color: #0194e2;
+}
+
+.footer__container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.logo{
+    display: grid;
+    width: 5rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer__container article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__container article p{
+    margin-top: 0.1rem;
+    align-items: center;
+    justify-content: center;
+    color: #ff5653;
+}
+
+.footer__container article img{
+    width: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__container article h2{
+    margin-bottom: 0.1rem;
+    font-size: 1.2rem;
+    margin-top: .5rem;
+}
+
+.footer__socials{
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 1.9rem;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.footer__socials a{
+    background: #0194e2;
+    align-items: center;
+    border: 10px solid transparent;
+    border-radius: 438rem;
+    transition: var(--transition);
+}
+
+.footer__socials a svg{
+    color: black;
+}
+
+.footer__socials a:hover{
+    background: white;
+}
+
+.footer__copyright{
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 2px solid #0194e2;
+    margin-top: 1rem;
+}
