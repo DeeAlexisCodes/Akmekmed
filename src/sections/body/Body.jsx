@@ -24,7 +24,14 @@ export const Body = () => {
           }
         </div>
         <h4> We also offer:</h4>
-        <p> ECG, Coagulation tests, Hormonal assay, Screening for handlers / house attendants, Screening for day care givers, Vaccines and more</p>
+        <ol>
+          <li>E.C.G</li>
+          <li>Coagulation tests</li>
+          <li>Hormonal assay</li>
+          <li>Screening for food handlers / house attendants</li>
+          <li>Screening for day care givers</li>
+          <li>Vaccines and more</li>
+        </ol>
     </div>
     </div>
    </section>

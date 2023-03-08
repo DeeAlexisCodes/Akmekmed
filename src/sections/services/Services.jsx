@@ -15,7 +15,7 @@ export const About = () => {
         <p>We are a health facility that offers first-class, affordably priced, quality diagnostic services in an effort to meet clients' diagnostic demands by utilizing highly skilled personnel and up-to-date technologies.</p>
 
         <h3>Vision</h3>
-        <p>A zenith bound clinical diagnosis centre for the betterment of every being.</p>
+        <p>A zenith bound clinical diagnostics centre for the betterment of every being.</p>
 
         <h3>Mission</h3>
         <p>To help improve medi-care through dedication to exceptional clinical diagnosis and research.</p>
