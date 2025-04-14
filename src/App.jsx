@@ -4,6 +4,7 @@ import Services from './pages/services/Services'
 import Contact from './pages/contact/Contact'
 import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
+import BackToTop from './components/BackToTop/BackToTop'
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
         <Route path='services' element={<Services/>}/>
         <Route path='contact' element={<Contact/>}/>
        </Routes>
+       <BackToTop />
        <Footer/>
       </BrowserRouter>
   )

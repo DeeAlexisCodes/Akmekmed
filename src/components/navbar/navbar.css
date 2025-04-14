@@ -3,12 +3,19 @@ nav {
     height: 5rem;
     display: grid;
     place-items: center;
-    background: black;
+    background: linear-gradient(
+        135deg,
+        rgba(44, 53, 68, 0.98) 0%,
+        rgba(1, 148, 226, 0.2) 100%
+    );
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9;
-    box-shadow: 0 1rem 1.5rem black;
+    z-index: 99;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
 }
 
@@ -18,9 +25,10 @@ nav {
     align-items: center;
 }
 
-.nav__logo{
+.nav__logo {
     width: 15rem;
     height: 4.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 nav img {
@@ -28,7 +36,12 @@ nav img {
 }
 
 nav a {
-    color: #ff5653;
+    color: rgba(255, 255, 255, 0.9);
+    transition: var(--transition-base);
+}
+
+nav a:hover {
+    color: var(--color-accent);
 }
 
 .nav__menu {
@@ -42,6 +55,7 @@ nav a {
 
 .active-nav{
     position: sticky;
+    color: var(--color-accent-2);
 }
 
 .active-nav::after {
@@ -49,91 +63,127 @@ nav a {
     display: block;
     width: 1.2rem;
     height: 1.2rem;
-    background: #ff5653;
+    background: linear-gradient(
+        135deg,
+        var(--color-accent-2) 0%,
+        var(--color-accent) 100%
+    );
     position: absolute;
     left: calc(50% - 0.6rem);
     transform: rotate(45deg);
     margin-top: 0.9rem;
+    border-radius: 0.2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* media queries(medium and small screens) */
 @media screen and (max-width: 1024px) {
-    .nav__toggle-btn{
-      display: inline-block;
-      background: transparent;
-      font-size: 1.8rem;
-      cursor: pointer;
+    .nav__toggle-btn {
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        cursor: pointer;
+        transition: var(--transition-base);
     }
   
-    .nav__toggle-btn svg{
-      color: #ff5653;
+    .nav__toggle-btn svg {
+        background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
     }
   
-    .nav__menu{
-      position: absolute;
-      top: 95%;
-      right: 0;
-      flex-direction: column;
-      gap: 0;
-      perspective: 400px;
+    .nav__menu {
+        position: absolute;
+        top: 95%;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        perspective: 400px;
+        min-width: 250px;
+        background: linear-gradient(
+            135deg,
+            rgba(44, 53, 68, 0.98) 0%,
+            rgba(1, 148, 226, 0.95) 100%
+        );
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        padding: 0.5rem;
+        margin-right: 1rem;
     }
   
-    .active-nav, .active-nav::after{
-      display: none;
+    .active-nav, .active-nav::after {
+        display: none;
     }
   
-    .nav__menu li{
-      height: 4rem;
-      width: 100%;
-      box-sizing: -2rem 2rem 5rem rgba(0, 0, 0, 0.4);
-      animation: navAnimation 600ms ease forwards;
-      transform: rotateX(90deg);
-      opacity: 0;
-      transform-origin: top;
+    .nav__menu li {
+        height: 3.5rem;
+        width: 100%;
+        animation: navAnimation 600ms ease forwards;
+        transform: rotateX(90deg);
+        opacity: 0;
+        transform-origin: top;
+        border-radius: 0.8rem;
+        transition: var(--transition-base);
+    }
+
+    .nav__menu li:hover {
+        background: linear-gradient(
+            90deg,
+            rgba(1, 148, 226, 0.1) 0%,
+            rgba(234, 182, 118, 0.1) 100%
+        );
     }
   
     .nav__menu li:nth-child(2) {
-      animation-delay: 200ms;
+        animation-delay: 200ms;
     }
   
     .nav__menu li:nth-child(3) {
-      animation-delay: 400ms;
+        animation-delay: 400ms;
     }
   
     .nav__menu li:nth-child(4) {
-      animation-delay: 600ms;
+        animation-delay: 600ms;
     }
   
     .nav__menu li:nth-child(5) {
-      animation-delay: 800ms;
-    }
-  
-    .nav__menu li:nth-child(6) {
-      animation-delay: 2000ms;
+        animation-delay: 800ms;
     }
   
     @keyframes navAnimation {
-      to {
-          transform: rotateX(0);
-          opacity: 1;
-      } 
+        to {
+            transform: rotateX(0);
+            opacity: 1;
+        } 
     }
   
-    .nav__menu li a{
-      background-color: black;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      padding: 1rem 5rem 1rem 3rem;
-      font-size: .7rem;
+    .nav__menu li a {
+        background: transparent;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 2rem;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.9);
+        letter-spacing: 0.5px;
+        transition: var(--transition-base);
+    }
+
+    .nav__menu li a:hover {
+        color: var(--color-accent);
+        transform: translateX(5px);
     }
   
-    .show__nav{
-      display: flex;
+    .show__nav {
+        display: flex;
     }
   
-    .hide__nav{
-      display: none;
+    .hide__nav {
+        display: none;
     }
-  }
+}

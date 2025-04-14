@@ -8,9 +8,9 @@ export const Body = () => {
    <section id='body'>
     <div className="container body__container">
     <div className="body__left">
-    <h4>We are a cutting-edge organization that offers top-notch clinical and diagnostic medical services.
-           </h4>
-    <h4> Our services are consistently reliable, timely, and accurate and come at an affordable price.</h4>       
+    <h3>We are a cutting-edge organization that offers top-notch clinical and diagnostic medical services.
+           </h3>
+    <p> Our services are consistently reliable, timely, and accurate and come at an affordable price.</p>       
     <div className="body__cards">
           {
             data.map(item => (

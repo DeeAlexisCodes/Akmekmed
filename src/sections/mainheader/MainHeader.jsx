@@ -12,7 +12,7 @@ export const MainHeader = () => {
                 <h4>Leading diagnostic center with top-notch equipment and professionals that offer great medical investigations. We provide 24-hours access to a medical laboratory, radiology (X-Ray and Ultrasound scan) and a dental clinic.</h4>
                 <div className="main__header-cta">
                   <div className="first__cta">
-                    <a href="/Services" className='btn primary'>Contact Us</a>
+                    <a href="/Contact" className='btn primary'>Contact Us</a>
                  </div>
                 </div>
                </Card>
